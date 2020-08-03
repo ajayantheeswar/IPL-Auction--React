@@ -1,0 +1,51 @@
+.side-bar{
+    width: 30%;
+    height: calc(100vh - 100px);
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    border-right: black solid 1px;  
+}
+
+.side-bar a {
+    padding: 0.5rem;
+    text-align: center;
+    color: black;
+    border: solid 1px black;
+    margin: 10px;
+}
+
+.side-bar a.active{
+    background-color: black;
+    color: white;
+}
+
+.backdrop{
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media(max-width:800px){
+    .side-bar{
+        position: absolute;
+        transform: translateX(-150%);
+        border-right: none;
+        z-index: 100;
+          
+    }
+
+    .side-bar.visible{
+        transform: translateX(0);
+        background-color: white;
+        width: 70%;
+    }
+    .backdrop {
+        display: block;
+    }
+       
+}
+

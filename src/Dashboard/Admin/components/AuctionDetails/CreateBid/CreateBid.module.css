@@ -1,0 +1,32 @@
+.create-bid {
+    width: 100%;
+    background-color: #ccc;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.create-bid input {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.7rem;
+    border: black 1px solid;
+}
+
+.create-bid button {
+    color : white;
+    background-color: black;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+}
+
+.create-bid input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.create-bid input[type=number] {
+  -moz-appearance: textfield;
+}

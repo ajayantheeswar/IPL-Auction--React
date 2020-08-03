@@ -1,0 +1,22 @@
+.bids-item{
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    background-color: rgb(218, 216, 216);
+    margin-bottom: 5px;
+}
+
+.bids-item p {
+    width : 30%;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.bids-item.heading{
+    background-color: black;
+    color: white;
+}
+
+.bids-item.heading p {
+    text-align: bold;
+}

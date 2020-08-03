@@ -1,0 +1,48 @@
+.nav-bar {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navbar-main img {
+    width: 72px;
+    background-color: white;
+    
+}
+
+.navbar-auth__controls{
+    border: 1px solid black;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: baseline;
+    position: relative;
+}
+
+.navbar-auth__controls img {
+    width :10px;
+    margin-left:5px
+}
+
+.bar-menu{
+    display: none;
+}
+
+@media(max-width:800px){
+    .navbar-auth__controls{
+        display: none;
+    }
+
+    .bar-menu{
+        display: block;
+        padding-right: 1rem;
+    }
+
+    .bar-menu img {
+        width: 20px;
+    }
+}
+

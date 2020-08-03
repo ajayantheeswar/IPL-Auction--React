@@ -1,0 +1,11 @@
+.auction-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media(max-width:600px){
+    .auction-list {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,210 @@
+
+.auth-head{
+    font-family: 'Proxima Nova Semibold' , 'Roboto';
+}
+
+.auth-head{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.auth-head img{
+    display: block;
+    width: 82px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-head hr {
+    border-color: rgba(235, 235, 235, 0.356);
+}
+
+.auth-tagline{
+    text-align: center;
+    
+}
+
+.auth-tagline h3 {
+    color: rgba(0, 0, 0, 0.685);
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0.3rem;
+}
+
+.auth-tagline p{
+    color: rgba(0, 0, 0, 0.37);
+    margin: 1rem;
+    vertical-align: middle;
+}
+
+.auth-tagline span {
+    color :rgb(0, 89, 255);
+    font-weight: 300;
+    margin-left: 10px;
+    text-decoration: underline;
+    
+}
+
+.auth-content{
+    margin: 2rem auto;
+    margin-top: 0;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.google-cta{
+    background-color: rgb(44, 44, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    width: 100%;
+    border-radius: 3px;    
+    margin-bottom: 1.5rem;
+}
+
+.google-cta img {
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.google-cta span{
+    color: white;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.oauth-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1.5rem;
+}
+
+.oauth-login h1{
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.267);
+    margin-bottom: 1rem;
+}
+
+
+.login-cta-options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-cta{
+    background-color: blue;
+    padding: 0.7rem ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.brand-cta img {
+    width: 20px;
+}
+
+.brand-cta span {
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.or-pan{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.or-pan p{
+    margin : 0 1rem;
+    font-size: 1rem;
+}
+
+.or-pan hr{
+    width: 40%;
+    border: solid 0.5px rgb(226, 226, 226);
+}
+
+.credientials-form{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cred__item{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.cred__item label {
+    font-size: 0.9rem;
+}
+.cred__item input {
+    padding: 0.5rem 0.7rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+    border: rgb(226, 226, 226) solid 1px;
+}
+
+.cred__item input:focus{
+    border: blue solid 1px;
+}
+
+.cred__item label.password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-password{
+    display: flex;
+}
+
+.show-password p{
+    display: inline-block;
+    font-size: 0.9rem;
+    margin : 0 5px;
+}
+
+.forget{
+    color: blue;
+    padding: 0 0.5rem ;
+    align-self: flex-end;
+}
+
+.auth-main-action{
+    width: 95%;
+    padding: 0.7rem;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.auth-error {
+    border: 1px solid red;
+    background-color: rgb(235, 190, 186);
+    color: red;
+    padding: 5px 1rem;
+    margin: 5px;
+}
+
+.auth-admin--user{
+    margin-top: 1rem;
+}
+
+.auth-admin--user a {
+    text-decoration: underline;
+    font-weight: 300;
+}

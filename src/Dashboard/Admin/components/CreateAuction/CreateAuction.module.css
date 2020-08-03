@@ -1,0 +1,16 @@
+.player-auction-Form{
+    margin-top: 2rem;
+}
+
+.create-auction{
+    padding: 1rem;
+}
+
+.cta-button{
+    border-radius: 5px;
+    
+    padding: 0.3rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: black;
+    color: white;
+}

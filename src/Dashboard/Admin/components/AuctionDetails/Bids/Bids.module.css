@@ -1,0 +1,26 @@
+.bids{
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    margin-top: 1.5rem;
+    padding: 5px;
+    height: 400px;
+    overflow:scroll;
+    
+    
+}
+
+.bids-heading{
+    display: flex;    
+    background-color:white;
+    background-color: black;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.bids-heading p {
+    width: 30%;
+    text-align: center;
+    color: white;
+}
+

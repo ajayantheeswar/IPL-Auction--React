@@ -1,0 +1,45 @@
+.admin-Dashboard{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.admin-Dashboard hr {
+    border: black 1px solid;
+    width: 97%;
+    margin-top: 0.5rem;
+    margin: 0 auto;
+}
+
+.main-section{
+    display: flex;
+    padding: 0.5rem;
+    justify-content: stretch;
+    align-content: stretch;
+}
+
+.main-section__action-container{
+    width:60%;
+    margin: 0 auto;
+}
+
+.auth {
+    display: none;
+    width: 100%;
+}
+
+@media(max-width:860px){
+    .admin-Dashboard {
+        width: 100%;
+    }
+    .main-section__action-container{
+        width:100%;
+        margin: 0 auto;
+    }
+    .auth{
+        display: block;
+    }
+}
