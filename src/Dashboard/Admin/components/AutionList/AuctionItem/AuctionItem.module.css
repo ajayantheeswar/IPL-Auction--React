@@ -9,10 +9,9 @@
 }
 
 .auction-item img{
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    margin: 0.5rem;
+    width: 125px;
+    height: 125px;
+    margin-top: 5px;
     display: inline-block;
 }
 

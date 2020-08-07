@@ -7,8 +7,10 @@ const instance = axios.create({
 
 instance.interceptors.request.use ( (config) => {
     const token = localStorage.getItem('token');
+    const type = localStorage.getItem('authType');
     if(token){
         config.headers.Authorization = token;
+        config.headers.type = type;
     }
     return config;
 } );

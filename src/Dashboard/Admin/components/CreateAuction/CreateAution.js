@@ -128,7 +128,7 @@ class CreateAution extends React.Component{
             formdata.append(element,this.state.player[element].value);
         }
         formdata.append('profile',this.state.playerImage.image);
-
+        console.log(this.state.playerImage.image);
 
         axios.post('/admin/create-auction',formdata,{
             headers: {

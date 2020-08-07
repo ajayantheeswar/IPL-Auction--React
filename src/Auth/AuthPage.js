@@ -8,6 +8,9 @@ import * as AuthActions from '../Store/Actions/Auth';
 
 import { connect } from 'react-redux'
 
+import { GoogleLogin } from 'react-google-login';
+import Axios from 'axios';
+
 class AuthPage extends Component {
 
     constructor(props){
@@ -68,7 +71,8 @@ class AuthPage extends Component {
             Name : this.state.auth.username.value,
             Email : this.state.auth.email.value,
             Password : this.state.auth.password.value,
-            isAdmin : !!this.props.isAdmin
+            isAdmin : !!this.props.isAdmin,
+            authType : 'EMP'
         }
 
         this.props.signUp(credientials);
@@ -78,11 +82,22 @@ class AuthPage extends Component {
         const credientials = {
             Email : this.state.auth.email.value,
             Password : this.state.auth.password.value,
-            isAdmin : !!this.props.isAdmin
+            isAdmin : !!this.props.isAdmin,
+            authType : 'EMP'
         }
 
         this.props.signIn(credientials);
     }
+
+
+    googleOnSuccess = (result) => {
+        console.log(result);
+        result.isAdmin =  !!this.props.isAdmin;
+        result.authType = 'Google';
+        this.props.isSignup ? this.props.signUp(result) : this.props.signIn(result);
+    }
+
+    getProfileObject = (result) => result.profileObj;
 
     render () {
        
@@ -93,8 +108,18 @@ class AuthPage extends Component {
                     <hr/>
                 </div>
                 <div className={classes['auth-tagline']}>
+                    <h3>{this.props.isAdmin ? 'Admin' : null}</h3>
                     <h3>{this.props.isSignup ? 'Sign up to Sponsor' : 'Log in and Play'}</h3>
                     {this.props.isSignup ? <p>Already have an account  ? <span> <NavLink to={`/${this.props.isAdmin ? 'admin' : 'user'}/signin`}>Sign In</NavLink> </span></p> : <p>Don't have an account? <span><NavLink to={`/${this.props.isAdmin ? 'admin' : 'user'}/signup`}>Sign Up</NavLink></span></p>}
+                </div>
+                <div style={{margin:'auto', textAlign:'center'}}>
+                    <GoogleLogin
+                        clientId="tok"
+                        buttonText="Sign In With Google"
+                        onSuccess={this.googleOnSuccess}
+                        onFailure={this.googleOnFail}
+                        cookiePolicy={'single_host_origin'}
+                    />
                 </div>
                 <div className={classes['auth-content']} >
                     <div className={classes['credientials-form']}>

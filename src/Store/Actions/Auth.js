@@ -23,9 +23,7 @@ const AuthFail = (err) => {
 
 export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
 
-      
     let url =  `/${authDetails.isAdmin ? 'admin' : 'user'}/${isSignup ? 'signup' : 'signin'}`; 
-
     dispatch(AuthStart())
     console.log(authDetails);
     axios.post(url,{
@@ -38,6 +36,7 @@ export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
             localStorage.setItem('name',data.user.name);
             localStorage.setItem('email',data.user.email);
             localStorage.setItem('isAdmin',authDetails.isAdmin);
+            localStorage.setItem('authType',authDetails.authType);
             dispatch(AuthSuccess())
         })
         .catch(err => {
