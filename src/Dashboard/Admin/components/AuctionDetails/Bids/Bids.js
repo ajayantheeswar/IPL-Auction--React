@@ -14,7 +14,7 @@ const Bids = props => {
                 <p>Time</p>
                 <p>Amount</p>
             </div>
-            {props.bids.map((bid,index) => <BidsItem isAdmin={props.isAdmin} {...bid} key={bid.id} index={index} />)}
+            {props.bids.map((bid,index) => <BidsItem isAdmin={props.isAdmin} {...bid} key={bid.ID} index={index} />)}
         </div>
     )
 }

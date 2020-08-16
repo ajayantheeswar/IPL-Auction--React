@@ -93,7 +93,8 @@ class AuthPage extends Component {
     googleOnSuccess = (result) => {
         console.log(result);
         result.isAdmin =  !!this.props.isAdmin;
-        result.authType = 'Google';
+        result.AuthType = 'Google';
+        result.Token = result.tokenId
         this.props.isSignup ? this.props.signUp(result) : this.props.signIn(result);
     }
 
@@ -114,7 +115,7 @@ class AuthPage extends Component {
                 </div>
                 <div style={{margin:'auto', textAlign:'center'}}>
                     <GoogleLogin
-                        clientId="tok"
+                        clientId="590731925935-p80q78ga8hv34ck97q39epgfjlf9idu4.apps.googleusercontent.com"
                         buttonText="Sign In With Google"
                         onSuccess={this.googleOnSuccess}
                         onFailure={this.googleOnFail}

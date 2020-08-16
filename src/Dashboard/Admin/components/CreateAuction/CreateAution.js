@@ -16,76 +16,76 @@ class CreateAution extends React.Component{
                 image : null
             },
             player : {
-                name : {
+                Name : {
                     value : '',
                     valid : true,
                     error : null,
                     config : {
                         label : 'Name',
-                        key : 'name',
+                        key : 'Name',
                         type : 'input'
                     }
                 },
-                battingStyle : {
+                BattingStyle : {
                     value : '',
                     valid : true,
                     error : null,
                     config : {
                         label : 'Batting Style',
-                        key : 'battingStyle',
+                        key : 'BattingStyle',
                         type : 'option',
                         options : ['','Left-Handed','Right-Handed']
                     }
                 },
-                average : {
+                Average : {
                     value : '',
                     valid : true,
                     error : null,
                     config : {
                         label : 'Batting Average',
-                        key : 'average',
+                        key : 'Average',
                         type : 'input'
                     }
                 },
-                role : {
+                Role : {
                     value : '',
                     valid : true,
                     error : null,
                     config : {
                         label : 'Role',
-                        key : 'role',
+                        key : 'Role',
                         type : 'option',
                         options : ['','Batsman','Bowler','All-Rounder']
                     }
                 },
-                country : {
+                Country : {
                     value : '',
                     valid : true,
                     error : null,
                     config : {
                         label : 'Country',
-                        key : 'country',
+                        key : 'Country',
                         type : 'option',
                         options : ['','India','England','Australia','Sri Lanka','New Zeland','West Indies']
                     }
                 },
-                start : {
+                Start : {
                     value : new Date(),
                     valid : true,
                     error : null,
                     config : {
                         label : 'Start Date',
-                        key : 'start',
+                        key : 'Start',
                         type : 'date',
                     }
                 },
-                end : {
+                End : {
                     value : new Date(),
                     valid : true,
                     error : null,
                     config : {
                         label : 'End Date',
-                        key : 'end',
+                        key : 'End',
                         type : 'date',
                     }
                 }
@@ -121,19 +121,18 @@ class CreateAution extends React.Component{
     onCreateAuction = () => {
         const formdata = new FormData();
         for (let element in  this.state.player){
-            if(element === 'start' || element === 'end'){
+            if(element === 'Start' || element === 'End'){
                 formdata.append(element,this.state.player[element].value.getTime());
                 continue;
             }
             formdata.append(element,this.state.player[element].value);
         }
-        formdata.append('profile',this.state.playerImage.image);
+        formdata.append('Profile',this.state.playerImage.image);
         console.log(this.state.playerImage.image);
 
         axios.post('/admin/create-auction',formdata,{
             headers: {
             'Content-Type': 'multipart/form-data'
-            
           }
         }).then(response => {
             this.props.history.push('/home');

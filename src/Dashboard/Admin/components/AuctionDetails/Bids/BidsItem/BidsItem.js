@@ -5,10 +5,10 @@ import classes from './BidsItem.module.css'
 const BidsItem = props => {
     return (
         <div className={classes['bids-item']}>
-            {props.isAdmin ? <p>{props.name || 'Name'}</p> : null} 
-            <p>{new Date(+props.time).toDateString() || 'Date'}</p>
-            <p>{new Date(+props.time).toTimeString().split(' ')[0] || 'Date'}</p>
-            <p>{'Rs. ' + props.amount || 'Amount'}</p>
+            {props.isAdmin ? <p>{props.Name || 'Name'}</p> : null} 
+            <p>{new Date(+props.Time).toDateString() || 'Date'}</p>
+            <p>{new Date(+props.Time).toTimeString().split(' ')[0] || 'Date'}</p>
+            <p>{'Rs. ' + props.Amount || 'Amount'}</p>
         </div>
     )
 }

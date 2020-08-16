@@ -27,14 +27,12 @@ export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
     dispatch(AuthStart())
     console.log(authDetails);
     axios.post(url,{
-        credientials: {
             ...authDetails
-        }
     }).then(({data}) => {
             console.log(data);
             localStorage.setItem('token',data.Token);
-            localStorage.setItem('name',data.user.name);
-            localStorage.setItem('email',data.user.email);
+            localStorage.setItem('name',data.Name);
+            localStorage.setItem('email',data.Email);
             localStorage.setItem('isAdmin',authDetails.isAdmin);
             localStorage.setItem('authType',authDetails.authType);
             dispatch(AuthSuccess())

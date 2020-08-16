@@ -40,16 +40,15 @@ class AuctionDetails extends React.Component {
         })
         
         axios.post(url,{
-            AuctionDetails : {
-                auctionId : id
-            }
+            AuctionID : +id
         })
          .then(response => {
+             console.log(response.data)
              this.setState((prev) => {
                  return {
                     ...prev,
                     loading : false,
-                    auction : response.data.auction,
+                    auction : response.data.Auction,
                     isBidSubmitted : false
                  }
              })
@@ -70,10 +69,8 @@ class AuctionDetails extends React.Component {
     bidTheAuction = () => {
         
         axios.post('/user/create-bid',{
-            BidDetails : {
-                AuctionId : this.state.auction.id,
-                Amount : this.state.bid
-            }
+                AuctionID : +this.state.auction.ID,
+                Amount : +this.state.bid
         })
          .then(response => {
              this.setState({
@@ -113,16 +110,16 @@ class AuctionDetails extends React.Component {
 
         const DetailsList = [];
         let image = profile;
-        if(this.state.auction.profile !== 'null'){
-            image = this.state.auction.profile
+        console.log(this.state.auction)
+        if(this.state.auction.Profile !== 'null'){
+            image = this.state.auction.Profile
         }
         
         for(const each in this.state.auction){
             
-            if(['battingStyle','average','role','start','end','country'].includes(each)){
-
+            if(['BattingStyle','Average','Role','Start','End','Country'].includes(each)){
                 let value = this.state.auction[each];
-                if(each ==='start' || each === 'end'){
+                if(each ==='Start' || each === 'End'){
                     const date = new Date(+value);
                     value = date.toDateString() + ' ' +date.toLocaleTimeString();
                 } 
@@ -140,7 +137,7 @@ class AuctionDetails extends React.Component {
             <div className={classes['auction-details']}>
                 <div className={classes['auction-headline']}>
                     <img src={image} alt="profile" />
-                    <p>{this.state.auction.name}</p>
+                    <p>{this.state.auction.Name}</p>
                 </div>
                 <div className={classes['auction-details--list']}>
                     {DetailsList}
@@ -148,7 +145,7 @@ class AuctionDetails extends React.Component {
                 {!this.state.isAdmin ? <CreateBid value={this.state.bid} 
                     onBid={ () => this.bidTheAuction()}
                     onValueChange={ (event) => this.onBidAmountChange(event)} /> : null}
-                <Bids bids={this.state.auction.bids} isAdmin={this.state.isAdmin} />
+                <Bids bids={this.state.auction.Bids} isAdmin={this.state.isAdmin} />
             </div>
         )
     }

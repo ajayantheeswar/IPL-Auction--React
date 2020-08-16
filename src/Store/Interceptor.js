@@ -10,7 +10,7 @@ instance.interceptors.request.use ( (config) => {
     const type = localStorage.getItem('authType');
     if(token){
         config.headers.Authorization = token;
-        config.headers.type = type;
+        config.headers.AuthType = type;
     }
     return config;
 } );

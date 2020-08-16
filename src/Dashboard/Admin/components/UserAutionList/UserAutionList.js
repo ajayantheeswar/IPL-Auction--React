@@ -54,8 +54,8 @@ class UserAutionList extends React.Component {
                     <AuctionItem 
                         historyComponent = {this.props.historyComponent}
                         {...auction} 
-                        key={auction.id}
-                        onClickBanner={() => this.onItemClick(auction.id)} /> 
+                        key={auction.ID}
+                        onClickBanner={() => this.onItemClick(auction.ID)} /> 
                 ) : <EmptyResult />}
             </div>
         );
